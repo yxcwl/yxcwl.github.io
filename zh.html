@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>唐欣轶 · 个人主页</title>
+<meta name="description" content="唐欣轶的个人主页 —— TODO: 用一句话补充你的定位，例如「前端开发 / 交互设计 / 在校学生」" />
+<!-- TODO(替换): 上线后把 og:url 改成真实域名；og:image 准备一张 1200×630 封面放到 assets/img/og-cover.png -->
+<meta property="og:type" content="profile" />
+<meta property="og:title" content="唐欣轶 · 个人主页" />
+<meta property="og:description" content="TODO: 一句话自我介绍，社交平台分享时会显示" />
+
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+<link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body id="top">
+
+<!-- ============ 背景场景（纯 CSS，无图片依赖） ============ -->
+<div class="scene" aria-hidden="true">
+  <div class="scene-blob blob-1"></div>
+  <div class="scene-blob blob-2"></div>
+  <div class="scene-blob blob-3"></div>
+  <div class="scene-grid"></div>
+  <div class="scene-spot"></div><!-- 跟随鼠标的光斑，坐标由 main.js 更新 -->
+</div>
+
+<!-- ============ 顶部导航栏 ============ -->
+<header class="site-header" id="siteHeader">
+  <div class="scroll-progress" id="scrollProgress"></div>
+  <nav class="nav container" aria-label="主导航">
+    <a class="brand" href="#top">
+      <span class="brand-mark">唐</span>
+      <span class="brand-text">唐欣轶</span>
+    </a>
+
+    <button class="nav-toggle" id="navToggle" aria-controls="navMenu" aria-expanded="false" aria-label="展开导航菜单">
+      <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+    </button>
+
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="#about">关于我</a></li>
+      <li><a href="#skills">技能</a></li>
+      <li><a href="#experience">经历</a></li>
+      <li><a href="#projects">作品</a></li>
+      <li><a class="nav-cta" href="#contact">联系我</a></li>
+      <li><a class="lang-switch" href="index.html" title="Switch to English">EN</a></li>
+      <li>
+        <button class="theme-toggle" id="themeToggle" aria-label="切换深浅色主题" title="切换主题">
+          <span class="tt-sun">☀</span><span class="tt-moon">☾</span>
+        </button>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+  <!-- ============ 个人简介区 ============ -->
+  <section class="hero" id="about">
+    <div class="container hero-inner">
+
+      <div class="hero-avatar reveal">
+        <div class="avatar-ring"></div>
+        <div class="avatar-ring ring-2"></div>
+        <!-- TODO(替换): 把 assets/img/avatar.svg 换成你的照片（正方形，≥400×400，文件名保持不变即可） -->
+        <img src="assets/img/avatar.svg" alt="唐欣轶的头像" width="180" height="180" />
+      </div>
+
+      <div class="hero-text">
+        <p class="eyebrow reveal" style="--d:1">你好，我是</p>
+        <h1 class="reveal" style="--d:2">唐欣轶</h1>
+
+        <!-- 打字机效果：轮播文案在页面底部的 PHRASES 里改 -->
+        <p class="tagline reveal" style="--d:3">
+          <span id="typing" class="typing"></span><span class="caret" aria-hidden="true"></span>
+        </p>
+
+        <!-- TODO(替换): 所在城市 · 当前状态；不需要可整行删除 -->
+        <p class="meta-line reveal" style="--d:4">
+          <span class="pulse-dot"></span>
+          TODO：所在城市 · 当前状态（在职 / 求职中 / 在读）
+        </p>
+
+        <div class="hero-actions reveal" style="--d:5">
+          <a class="btn btn-primary" href="mailto:1564737607@qq.com">给我发邮件</a>
+          <a class="btn btn-ghost" href="#projects">看看我的作品</a>
+          <!-- TODO(可选): 有 GitHub / 博客可在这里再加一个 btn-ghost -->
+        </div>
+
+        <!-- TODO(替换): 数字换成你的真实数据；不需要可整块删除（滚动进入时数字会动画累加） -->
+        <ul class="stat-row reveal" style="--d:6">
+          <li><b data-count="3" data-suffix=" 年">0</b><span>TODO：经验年限</span></li>
+          <li><b data-count="12" data-suffix=" 个">0</b><span>TODO：完成项目</span></li>
+          <li><b data-count="100" data-suffix=" %">0</b><span>TODO：交付满意度</span></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <a class="scroll-hint" href="#skills" aria-label="向下滚动">
+      <span class="mouse"><span class="wheel"></span></span>
+      <span class="scroll-hint-text">向下滚动</span>
+    </a>
+  </section>
+
+  <!-- ============ 技能展示区 ============ -->
+  <section class="section" id="skills">
+    <div class="container">
+      <header class="section-head reveal">
+        <h2>技能</h2>
+        <p>TODO：一句话补充能力侧重，例如「前端工程为主，兼顾设计与后端」</p>
+      </header>
+
+      <!-- TODO(替换): 改成你的真实技能；sk-bar > i 的 data-pct 是熟练度百分比 -->
+      <div class="skill-list">
+
+        <div class="skill-row reveal" style="--d:1">
+          <div class="sk-head"><span class="sk-name">TODO：技能一</span><span class="sk-score" data-count="90" data-suffix="%">0</span></div>
+          <div class="sk-bar"><i data-pct="90"></i></div>
+        </div>
+
+        <div class="skill-row reveal" style="--d:2">
+          <div class="sk-head"><span class="sk-name">TODO：技能二</span><span class="sk-score" data-count="85" data-suffix="%">0</span></div>
+          <div class="sk-bar"><i data-pct="85"></i></div>
+        </div>
+
+        <div class="skill-row reveal" style="--d:3">
+          <div class="sk-head"><span class="sk-name">TODO：技能三</span><span class="sk-score" data-count="78" data-suffix="%">0</span></div>
+          <div class="sk-bar"><i data-pct="78"></i></div>
+        </div>
+
+        <div class="skill-row reveal" style="--d:4">
+          <div class="sk-head"><span class="sk-name">TODO：技能四</span><span class="sk-score" data-count="70" data-suffix="%">0</span></div>
+          <div class="sk-bar"><i data-pct="70"></i></div>
+        </div>
+
+      </div>
+
+      <div class="chip-cloud reveal" style="--d:5">
+        <h3 class="chip-title">工具 / 关键词</h3>
+        <div class="chips">
+          <!-- TODO(替换): 改成你的工具、框架、关键词 -->
+          <span class="chip">TODO：工具一</span>
+          <span class="chip">TODO：工具二</span>
+          <span class="chip">TODO：工具三</span>
+          <span class="chip">TODO：工具四</span>
+          <span class="chip">TODO：工具五</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 经历展示区 ============ -->
+  <section class="section section-alt" id="experience">
+    <div class="container">
+      <header class="section-head reveal">
+        <h2>经历</h2>
+        <p>TODO：一句话说明主线，例如「两段实习 + 一个长期项目」</p>
+      </header>
+
+      <!-- TODO(替换): 时间从近到远；左侧竖线会随滚动填充（进度由 main.js 计算） -->
+      <ol class="timeline" id="timeline">
+
+        <li class="timeline-item reveal">
+          <span class="timeline-when">TODO：2026.03 — 至今</span>
+          <h3>TODO：公司 / 组织 / 学校名称</h3>
+          <p class="timeline-role">TODO：职位或身份</p>
+          <ul>
+            <li>TODO：一条具体成果，最好带数字</li>
+            <li>TODO：第二条成果</li>
+          </ul>
+        </li>
+
+        <li class="timeline-item reveal">
+          <span class="timeline-when">TODO：2024.09 — 2026.02</span>
+          <h3>TODO：学校 / 项目名称</h3>
+          <p class="timeline-role">TODO：专业 / 角色</p>
+          <ul>
+            <li>TODO：主要做了什么</li>
+            <li>TODO：取得什么结果</li>
+          </ul>
+        </li>
+
+        <li class="timeline-item reveal">
+          <span class="timeline-when">TODO：2023.05 — 2023.12</span>
+          <h3>TODO：项目 / 社团 / 比赛</h3>
+          <p class="timeline-role">TODO：角色</p>
+          <ul>
+            <li>TODO：主要贡献</li>
+          </ul>
+        </li>
+
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ 作品 / 项目展示区 ============ -->
+  <section class="section" id="projects">
+    <div class="container">
+      <header class="section-head reveal">
+        <h2>作品</h2>
+        <p>TODO：一句话说明作品类型，例如「三个独立完成的 Web 项目」</p>
+      </header>
+
+      <!-- TODO(替换): 每个 .project-card 一个作品；配图放 assets/img/，用相对路径引用 -->
+      <div class="project-grid">
+
+        <article class="project-card reveal" style="--d:1" data-tilt>
+          <div class="project-thumb">
+            <img src="assets/img/project-placeholder.svg" alt="项目一 预览图" />
+            <span class="thumb-badge">01</span>
+          </div>
+          <div class="project-body">
+            <h3>TODO：项目名称</h3>
+            <p>TODO：两三句话说明它解决什么问题、你负责哪部分、有什么结果</p>
+            <div class="chips sm">
+              <span class="chip">TODO：技术一</span>
+              <span class="chip">TODO：技术二</span>
+            </div>
+            <p class="project-links">
+              <a href="#">在线预览</a>
+              <a href="#">源代码</a>
+            </p>
+          </div>
+        </article>
+
+        <article class="project-card reveal" style="--d:2" data-tilt>
+          <div class="project-thumb">
+            <img src="assets/img/project-placeholder.svg" alt="项目二 预览图" />
+            <span class="thumb-badge">02</span>
+          </div>
+          <div class="project-body">
+            <h3>TODO：项目名称</h3>
+            <p>TODO：两三句话说明它解决什么问题、你负责哪部分、有什么结果</p>
+            <div class="chips sm">
+              <span class="chip">TODO：技术一</span>
+            </div>
+            <p class="project-links">
+              <a href="#">在线预览</a>
+              <a href="#">源代码</a>
+            </p>
+          </div>
+        </article>
+
+        <article class="project-card reveal" style="--d:3" data-tilt>
+          <div class="project-thumb">
+            <img src="assets/img/project-placeholder.svg" alt="项目三 预览图" />
+            <span class="thumb-badge">03</span>
+          </div>
+          <div class="project-body">
+            <h3>TODO：项目名称</h3>
+            <p>TODO：两三句话说明它解决什么问题、你负责哪部分、有什么结果</p>
+            <div class="chips sm">
+              <span class="chip">TODO：技术一</span>
+            </div>
+            <p class="project-links">
+              <a href="#">在线预览</a>
+              <a href="#">源代码</a>
+            </p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 联系区 ============ -->
+  <section class="section section-alt" id="contact">
+    <div class="container">
+      <div class="contact-card reveal" data-tilt>
+        <header class="section-head center">
+          <h2>联系我</h2>
+          <p>无论是合作、招聘还是随便聊聊，都欢迎发邮件给我。</p>
+        </header>
+
+        <a class="email-link" href="mailto:1564737607@qq.com">1564737607@qq.com</a>
+
+        <!-- TODO(替换): 有社交账号就填真实地址，没有就删除对应的 a 标签 -->
+        <div class="social-list">
+          <a href="#" rel="noopener">GitHub</a>
+          <a href="#" rel="noopener">哔哩哔哩</a>
+          <a href="#" rel="noopener">知乎</a>
+          <a href="#" rel="noopener">微信</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ 页脚 ============ -->
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p>© <span id="year">2026</span> 唐欣轶 · 保留所有权利</p>
+    <p class="footer-links">
+      <a href="mailto:1564737607@qq.com">1564737607@qq.com</a>
+      <!-- TODO(可选): 简历下载：<a href="assets/resume.pdf" download>下载简历</a> -->
+    </p>
+  </div>
+</footer>
+
+<!-- 回到顶部 -->
+<button class="to-top" id="toTop" aria-label="回到顶部">↑</button>
+
+<!-- TODO(替换): 打字机轮播文案（中文版） -->
+<script>
+  window.PHRASES = [
+    '专注 Web 前端与交互设计',
+    '正在寻找实习机会',
+    '把想法做成能跑起来的东西'
+  ];
+</script>
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>

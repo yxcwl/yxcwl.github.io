@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Tang Xinyi · Personal Homepage</title>
+<meta name="description" content="Personal homepage of Tang Xinyi — TODO: add a one-line positioning statement, e.g. Front-end Developer / Interaction Design / Student" />
+<!-- TODO(replace): after going live, change og:url to your real domain -->
+<meta property="og:type" content="profile" />
+<meta property="og:title" content="Tang Xinyi · Personal Homepage" />
+<meta property="og:description" content="TODO: one-line intro, shown when the link is shared" />
+
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+<link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body id="top">
+
+<!-- ============ Background scene (pure CSS, no image assets) ============ -->
+<div class="scene" aria-hidden="true">
+  <div class="scene-blob blob-1"></div>
+  <div class="scene-blob blob-2"></div>
+  <div class="scene-blob blob-3"></div>
+  <div class="scene-grid"></div>
+  <div class="scene-spot"></div><!-- cursor spotlight, coordinates updated by main.js -->
+</div>
+
+<!-- ============ Header / navigation ============ -->
+<header class="site-header" id="siteHeader">
+  <div class="scroll-progress" id="scrollProgress"></div>
+  <nav class="nav container" aria-label="Main navigation">
+    <a class="brand" href="#top">
+      <span class="brand-mark">T</span>
+      <span class="brand-text">Tang Xinyi</span>
+    </a>
+
+    <button class="nav-toggle" id="navToggle" aria-controls="navMenu" aria-expanded="false" aria-label="Open navigation menu">
+      <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+    </button>
+
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Work</a></li>
+      <li><a class="nav-cta" href="#contact">Contact</a></li>
+      <li><a class="lang-switch" href="zh.html" title="切换到中文">中文</a></li>
+      <li>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark / light theme" title="Toggle theme">
+          <span class="tt-sun">☀</span><span class="tt-moon">☾</span>
+        </button>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+  <!-- ============ Hero / about ============ -->
+  <section class="hero" id="about">
+    <div class="container hero-inner">
+
+      <div class="hero-avatar reveal">
+        <div class="avatar-ring"></div>
+        <div class="avatar-ring ring-2"></div>
+        <!-- TODO(replace): swap assets/img/avatar.svg for your photo (square, >=400x400) -->
+        <img src="assets/img/avatar.svg" alt="Portrait of Tang Xinyi" width="180" height="180" />
+      </div>
+
+      <div class="hero-text">
+        <p class="eyebrow reveal" style="--d:1">Hi, I'm</p>
+        <h1 class="reveal" style="--d:2">Tang Xinyi</h1>
+
+        <!-- Typewriter effect: rotating lines are defined in the PHRASES block at the bottom -->
+        <p class="tagline reveal" style="--d:3">
+          <span id="typing" class="typing"></span><span class="caret" aria-hidden="true"></span>
+        </p>
+
+        <!-- TODO(replace): city · current status. Delete this line if not needed -->
+        <p class="meta-line reveal" style="--d:4">
+          <span class="pulse-dot"></span>
+          TODO: City · Current status (employed / open to work / student)
+        </p>
+
+        <div class="hero-actions reveal" style="--d:5">
+          <a class="btn btn-primary" href="mailto:1564737607@qq.com">Email me</a>
+          <a class="btn btn-ghost" href="#projects">See my work</a>
+          <!-- TODO(optional): add another btn-ghost here for GitHub / blog -->
+        </div>
+
+        <!-- TODO(replace): real numbers. Delete the whole block if not needed (counts up on scroll) -->
+        <ul class="stat-row reveal" style="--d:6">
+          <li><b data-count="3" data-suffix=" yrs">0</b><span>Years of experience</span></li>
+          <li><b data-count="12" data-suffix="">0</b><span>Projects shipped</span></li>
+          <li><b data-count="100" data-suffix="%">0</b><span>Delivery satisfaction</span></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <a class="scroll-hint" href="#skills" aria-label="Scroll down">
+      <span class="mouse"><span class="wheel"></span></span>
+      <span class="scroll-hint-text">Scroll</span>
+    </a>
+  </section>
+
+  <!-- ============ Skills ============ -->
+  <section class="section" id="skills">
+    <div class="container">
+      <header class="section-head reveal">
+        <h2>Skills</h2>
+        <p>TODO: one line about your focus, e.g. “Front-end engineering first, with design and back-end on the side”</p>
+      </header>
+
+      <!-- TODO(replace): your real skills; data-pct on .sk-bar > i is the proficiency percentage -->
+      <div class="skill-list">
+
+        <div class="skill-row reveal" style="--d:1">
+          <div class="sk-head"><span class="sk-name">TODO: Skill one</span><span class="sk-score" data-count="90" data-suffix="%">0</span></div>
+          <div class="sk-bar"><i data-pct="90"></i></div>
+        </div>
+
+        <div class="skill-row reveal" style="--d:2">
+          <div class="sk-head"><span class="sk-name">TODO: Skill two</span><span class="sk-score" data-count="85" data-suffix="%">0</span></div>
+          <div class="sk-bar"><i data-pct="85"></i></div>
+        </div>
+
+        <div class="skill-row reveal" style="--d:3">
+          <div class="sk-head"><span class="sk-name">TODO: Skill three</span><span class="sk-score" data-count="78" data-suffix="%">0</span></div>
+          <div class="sk-bar"><i data-pct="78"></i></div>
+        </div>
+
+        <div class="skill-row reveal" style="--d:4">
+          <div class="sk-head"><span class="sk-name">TODO: Skill four</span><span class="sk-score" data-count="70" data-suffix="%">0</span></div>
+          <div class="sk-bar"><i data-pct="70"></i></div>
+        </div>
+
+      </div>
+
+      <div class="chip-cloud reveal" style="--d:5">
+        <h3 class="chip-title">Tools / Keywords</h3>
+        <div class="chips">
+          <!-- TODO(replace): your tools, frameworks, keywords -->
+          <span class="chip">TODO: Tool one</span>
+          <span class="chip">TODO: Tool two</span>
+          <span class="chip">TODO: Tool three</span>
+          <span class="chip">TODO: Tool four</span>
+          <span class="chip">TODO: Tool five</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Experience ============ -->
+  <section class="section section-alt" id="experience">
+    <div class="container">
+      <header class="section-head reveal">
+        <h2>Experience</h2>
+        <p>TODO: one line describing the thread, e.g. “Two internships plus one long-running project”</p>
+      </header>
+
+      <!-- TODO(replace): newest first; the vertical line fills as you scroll (computed by main.js) -->
+      <ol class="timeline" id="timeline">
+
+        <li class="timeline-item reveal">
+          <span class="timeline-when">TODO: 2026.03 — Present</span>
+          <h3>TODO: Company / organization / school</h3>
+          <p class="timeline-role">TODO: Role or title</p>
+          <ul>
+            <li>TODO: one concrete result, ideally with numbers</li>
+            <li>TODO: a second result</li>
+          </ul>
+        </li>
+
+        <li class="timeline-item reveal">
+          <span class="timeline-when">TODO: 2024.09 — 2026.02</span>
+          <h3>TODO: School / project name</h3>
+          <p class="timeline-role">TODO: Major / role</p>
+          <ul>
+            <li>TODO: what you did</li>
+            <li>TODO: what came out of it</li>
+          </ul>
+        </li>
+
+        <li class="timeline-item reveal">
+          <span class="timeline-when">TODO: 2023.05 — 2023.12</span>
+          <h3>TODO: Project / club / competition</h3>
+          <p class="timeline-role">TODO: Role</p>
+          <ul>
+            <li>TODO: your main contribution</li>
+          </ul>
+        </li>
+
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ Work / projects ============ -->
+  <section class="section" id="projects">
+    <div class="container">
+      <header class="section-head reveal">
+        <h2>Work</h2>
+        <p>TODO: one line about the kind of work, e.g. “Three web projects built end to end”</p>
+      </header>
+
+      <!-- TODO(replace): one .project-card per item; images go in assets/img/, referenced by relative path -->
+      <div class="project-grid">
+
+        <article class="project-card reveal" style="--d:1" data-tilt>
+          <div class="project-thumb">
+            <img src="assets/img/project-placeholder.svg" alt="Project one preview" />
+            <span class="thumb-badge">01</span>
+          </div>
+          <div class="project-body">
+            <h3>TODO: Project name</h3>
+            <p>TODO: two or three sentences — what problem it solves, which part you owned, what the outcome was</p>
+            <div class="chips sm">
+              <span class="chip">TODO: Tech one</span>
+              <span class="chip">TODO: Tech two</span>
+            </div>
+            <p class="project-links">
+              <a href="#">Live demo</a>
+              <a href="#">Source</a>
+            </p>
+          </div>
+        </article>
+
+        <article class="project-card reveal" style="--d:2" data-tilt>
+          <div class="project-thumb">
+            <img src="assets/img/project-placeholder.svg" alt="Project two preview" />
+            <span class="thumb-badge">02</span>
+          </div>
+          <div class="project-body">
+            <h3>TODO: Project name</h3>
+            <p>TODO: two or three sentences — what problem it solves, which part you owned, what the outcome was</p>
+            <div class="chips sm">
+              <span class="chip">TODO: Tech one</span>
+            </div>
+            <p class="project-links">
+              <a href="#">Live demo</a>
+              <a href="#">Source</a>
+            </p>
+          </div>
+        </article>
+
+        <article class="project-card reveal" style="--d:3" data-tilt>
+          <div class="project-thumb">
+            <img src="assets/img/project-placeholder.svg" alt="Project three preview" />
+            <span class="thumb-badge">03</span>
+          </div>
+          <div class="project-body">
+            <h3>TODO: Project name</h3>
+            <p>TODO: two or three sentences — what problem it solves, which part you owned, what the outcome was</p>
+            <div class="chips sm">
+              <span class="chip">TODO: Tech one</span>
+            </div>
+            <p class="project-links">
+              <a href="#">Live demo</a>
+              <a href="#">Source</a>
+            </p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Contact ============ -->
+  <section class="section section-alt" id="contact">
+    <div class="container">
+      <div class="contact-card reveal" data-tilt>
+        <header class="section-head center">
+          <h2>Get in touch</h2>
+          <p>Collaboration, hiring, or just a chat — email me any time.</p>
+        </header>
+
+        <a class="email-link" href="mailto:1564737607@qq.com">1564737607@qq.com</a>
+
+        <!-- TODO(replace): fill in real profile URLs, or delete the anchor you don't need -->
+        <div class="social-list">
+          <a href="#" rel="noopener">GitHub</a>
+          <a href="#" rel="noopener">LinkedIn</a>
+          <a href="#" rel="noopener">X / Twitter</a>
+          <a href="#" rel="noopener">WeChat</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ Footer ============ -->
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p>© <span id="year">2026</span> Tang Xinyi · All rights reserved</p>
+    <p class="footer-links">
+      <a href="mailto:1564737607@qq.com">1564737607@qq.com</a>
+      <!-- TODO(optional): résumé download: <a href="assets/resume.pdf" download>Download résumé</a> -->
+    </p>
+  </div>
+</footer>
+
+<!-- Back to top -->
+<button class="to-top" id="toTop" aria-label="Back to top">↑</button>
+
+<!-- TODO(replace): typewriter rotating lines (English version) -->
+<script>
+  window.PHRASES = [
+    'Front-end and interaction design',
+    'Open to internship opportunities',
+    'I turn ideas into things that run'
+  ];
+</script>
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>
