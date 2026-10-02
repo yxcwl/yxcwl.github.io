@@ -88,17 +88,34 @@ python -m http.server 8000
 
 两者共用 `assets/`，打字机轮播文案写在各自页面底部的 `window.PHRASES` 里，改文案不用动 `main.js`。
 
-## 部署到 GitHub 用户站
+## 部署到 GitHub 用户站 ✅ 已上线
 
-仓库名固定为 `yxcwl.github.io`，站点地址 `https://yxcwl.github.io`（英文版）与 `https://yxcwl.github.io/zh.html`（中文版）。
+- 仓库：https://github.com/yxcwl/yxcwl.github.io
+- 英文版（默认）：https://yxcwl.github.io/
+- 中文版：https://yxcwl.github.io/zh.html
+- 发布源：`main` 分支 + `/` 根目录；已开启 Enforce HTTPS；仓库含 `.nojekyll`
+
+### 更新线上内容
+
+本机 git 走代理时会报 `Failed to connect to github.com:443`，两种办法：
 
 ```bash
-# 在 Git Bash 中执行；Token 需要 repo 权限
-GITHUB_TOKEN=ghp_xxxxxxxxxxxx ./deploy.sh
+# 方式 A：正常网络下直接推
+git add -A && git commit -m "update" && git push origin main
+
+# 方式 B：代理环境下用 API 全量提交（不需要 git 网络通道）
+python api_push.py ghp_xxxxxxxxxxxx yxcwl/yxcwl.github.io main
 ```
 
-脚本依次完成：创建仓库 → 推送 `main` → 开启 Pages（`main` + `/`）→ 查询构建状态。
-本体全部是相对路径，用户站直接可用，无需任何 base 配置。
+`api_push.py` 会把 `git ls-files` 里的全部文件打包成**一个**提交推上去并刷新 Pages；
+空仓库时它先用 Contents API 建一次引导提交再走 Git Data API。
+`deploy.sh` 依赖 `git push`，在本机代理环境不通，仅作备用。
+
+推送后 Pages 约 30 秒～2 分钟生效，看不到变化先 `Ctrl+F5` 硬刷。
+
+> 安全提醒：Token 等价于完整仓库权限，用完请到
+> github.com → Settings → Developer settings → Personal access tokens 删除。
+> 不要把 Token 写进任何会被提交的文件。
 
 ## 扩展建议
 
